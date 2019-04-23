@@ -144,7 +144,7 @@
                 <th class="{{'sort-asc' if filter_data.order_by['finish_time'] == 'asc'}} {{'sort-desc' if filter_data.order_by['finish_time'] == 'desc'}} sortable" data-sort="finish_time">Completed</th>
                 {% endif %}
                 {% if 'gold_task' in filter_data.display_columns %}
-                <th class="{{'sort-asc' if filter_data.order_by['gold_task'] == 'asc'}} {{'sort-desc' if filter_data.order_by['gold_task'] == 'desc'}} sortable" data-sort="gold_task">Gold Task</th>
+                <th class="{{'sort-asc' if filter_data.order_by['gold_task'] == 'asc'}} {{'sort-desc' if filter_data.order_by['gold_task'] == 'desc'}}">Gold Task</th>
                 {% endif %}
                 {% if 'actions' in filter_data.display_columns %}
                 <th>Actions</th>
@@ -193,8 +193,8 @@
                     <div>
                         <select id="gold_task" class="input-sm">
                             <option value="" style="font-weight: lighter;">--select--</option>
-                            <option value="Y">Y</option>
-                            <option value="N">N</option>
+                            <option value="1">Y</option>
+                            <option value="0">N</option>
                             <option value="All">All</option>
                         </select>
                     </div>
@@ -221,10 +221,11 @@
                     {% else %}
                         <a class="label label-info" target="_blank" href="{{ url_for('project.task_presenter', short_name=project.short_name, task_id=t.id) }}">#{{ t.id }}</a>
                     {% endif %}
+                    {{ t.n_task_runs|int }} {{_('of')}}
                     {% if t.calibration %}
-                    {{_('---')}}
+                      &infin;
                     {% else %}
-                    {{ t.n_task_runs|int }} {{_('of')}} {{ t.n_answers }}
+                      {{ t.n_answers }}
                     {% endif %}
                 </td>
                 {% endif %}
@@ -570,7 +571,7 @@
 </div>
 </div>
 
-<script src="/static/js/gen/task_browse.min.js?92b9d4a348356a71fa5f"></script>
+<script src="/static/js/gen/task_browse.min.838a9c6f7d39a90cdc86.js"></script>
 <script type="text/javascript">
     var filter_data = {{ filter_data|tojson }};
     taskBrowse.setFilters(filter_data);

@@ -1,16 +1,30 @@
 {% extends "projects/base.html" %}
 {% set active_page = "projects" %}
 {% set active_link  = "settings" %}
-{% set section = _('Answer Fields Configuration') %}
+{% set section = _('Configuration') %}
 {% from "_formhelpers.html" import render_form %}
 
 {% block projectcontent %}
 
 <div id="answerfieldsconfig">
+    <!-- <table left-padding="10%" width="100%"> <tr valign="top">
+        <th>
+        <h3> consensus configuration </h3>
+        <consensus-config></consensus-config>
+        </th>
+        <th>
+        <h3> answer field configuration </h3>
+        <fields-config></fields-config>
+        </th>
+
+    </tr></table> -->
+    <h3> consensus configuration </h3>
+    <consensus-config></consensus-config>
+    <h3> answer field configuration </h3>
     <fields-config></fields-config>
 </div>
 
-<script src="/static/js/gen/answerfieldsconfig.min.js?2a8c9e707c3aef6f9ca0"></script>
+<script src="/static/js/gen/answerfieldsconfig.min.838a9c6f7d39a90cdc86.js"></script>
 
 <script>
 answerFields.setData({

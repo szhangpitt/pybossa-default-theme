@@ -102,5 +102,8 @@
       "^.+\\.(js)$": "babel-jest",
       "^.+\\.html$": "<rootDir>/test/utils/htmlLoader.js"
     }
+  },
+  "dependencies": {
+    "yarn": "~1.15.2"
   }
 }
